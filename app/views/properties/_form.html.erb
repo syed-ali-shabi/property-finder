@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-field">
     <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-field">
     <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-field">
     <%= form.label :room %>
-    <%= form.number_field :room %>
+    <%= form.number_field :room, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-field">
     <%= form.label :bathroom %>
-    <%= form.number_field :bathroom %>
+    <%= form.number_field :bathroom, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-field">
     <%= form.label :photo %>
-    <%= form.text_field :photo %>
+    <%= form.text_field :photo, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-field">
+    <%= form.submit "submit", class: "btn btn-primary"%>
   </div>
 <% end %>
