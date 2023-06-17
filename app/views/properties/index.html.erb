@@ -24,7 +24,10 @@
         <td><%= property.price %></td>
         <td><%= property.room %></td>
         <td><%= property.bathroom %></td>
-        <td><%= property.photo %></td>
+        <td><%  property.images.each  do |image| %>
+            <%= image_tag image, width: 80, height: 40%>
+          <%end%>
+        </td>
         <td><%= link_to 'Show', property %></td>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>
         <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -35,5 +38,5 @@
 
 <br>
 
-<%= link_to 'New Property', new_property_path %>
+<%= link_to 'New Property', new_property_path , class: "btn btn-success"%>
 

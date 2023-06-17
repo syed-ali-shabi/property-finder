@@ -26,6 +26,7 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       if @property.save
+         @property.images.attach(params[:property][:images])
         format.html { redirect_to property_url(@property), notice: "Property was successfully created." }
         format.json { render :show, status: :created, location: @property }
       else
@@ -39,6 +40,7 @@ class PropertiesController < ApplicationController
   def update
     respond_to do |format|
       if @property.update(property_params)
+        @property.images.attach(params[:property][:images])
         format.html { redirect_to property_url(@property), notice: "Property was successfully updated." }
         format.json { render :show, status: :ok, location: @property }
       else
@@ -66,6 +68,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :address, :price, :room, :bathroom, :photo)
+      params.require(:property).permit(:name, :address, :price, :room, :bathroom, :photo, :images , :images)
     end
 end

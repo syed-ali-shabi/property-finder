@@ -17,7 +17,7 @@
 
       
      <body id= "<%=controller.controller_name%>" class="con">
-      <%if  ["public","devise", "session"].include?(controller.controller_name)%>
+      <%if  ["public","devise", "sessions"].include?(controller.controller_name)%>
         <header>
           <%= render 'layouts/nav/public'%>
           <%= yield %>
